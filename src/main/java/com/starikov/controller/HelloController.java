@@ -11,8 +11,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/")
 public class HelloController {
 
+    private final ContactDao contactDao;
+
     @Autowired
-    private ContactDao contactDao;
+    public HelloController(ContactDao contactDao) {
+        this.contactDao = contactDao;
+    }
 
     @RequestMapping(method = RequestMethod.GET)
     public String helloController(Model model) {
