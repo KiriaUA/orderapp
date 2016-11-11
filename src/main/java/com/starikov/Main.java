@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        GenericXmlApplicationContext context = new GenericXmlApplicationContext("classpath:META-INF/app-context.xml");
+        GenericXmlApplicationContext context = new GenericXmlApplicationContext("classpath:META-INF/spring/app-context.xml");
         JdbcTemplate jdbcTemplate = context.getBean("jdbcTemplate", JdbcTemplate.class);
 
         ProxyFactory proxyFactory = new ProxyFactory();
