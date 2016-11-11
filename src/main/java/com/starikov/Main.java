@@ -1,5 +1,6 @@
 package com.starikov;
 
+import com.starikov.dao.impl.JdbcContactDao;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -12,7 +13,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         GenericXmlApplicationContext context = new GenericXmlApplicationContext("classpath:META-INF/spring/app-context.xml");
-        JdbcTemplate jdbcTemplate = context.getBean("jdbcTemplate", JdbcTemplate.class);
-
+        JdbcContactDao dao = context.getBean("jdbcContactDao", JdbcContactDao.class);
+        System.out.println(dao.getContactById(1L));
     }
 }
