@@ -7,5 +7,6 @@
 
 <p>Hello</p>
 <p>${name}</p>
+<a href="${pageContext.request.contextPath}/admin">Admin page</a>
 </body>
 </html>
